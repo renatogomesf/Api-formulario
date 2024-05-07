@@ -7,19 +7,19 @@ const app = express()
 app.use(express.json())
 
 
-app.get('/dados', CadastroController.index)
+app.get('/cadastros', CadastroController.index)
 
 
-app.get('/dados/:id', CadastroController.show)
+app.get('/cadastros/:id', CadastroController.show)
 
 
-app.post('/dados', CadastroController.store)
+app.post('/cadastros', CadastroController.store)
 
 
-app.put('/dados/:id', CadastroController.update)
+app.put('/cadastros/:id', CadastroController.update)
 
 
-app.delete('/dados/:id', CadastroController.delete)
+app.delete('/cadastros/:id', CadastroController.delete)
 
 
 export default app
