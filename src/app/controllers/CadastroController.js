@@ -7,7 +7,6 @@ class CadastroController {
     
         conexao.query(sql, (error,result)=>{
             if(error){
-                response.writehead()
                 response.status(404).json({'erro':error})
             }else{
                 response.status(200).send(result)
