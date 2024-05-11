@@ -15,17 +15,49 @@ class CadastroController {
     }
 
 
-    show(request, response) {
+    showId(request, response) {
         const id = request.params.id
     
         const sql = 'select * from cadastros where id = ?;'
     
         conexao.query(sql, id, (error,result)=>{
-            const dado = result[0]
+            // const dado = result[0]
             if(error){
                 response.status(404).json({'erro':error})
             }else{
-                response.status(200).send(dado)
+                response.status(200).send(result)
+            }
+        })
+    }
+    
+
+    showNome(request, response) {
+        const nome = request.params.nome
+    
+        const sql = 'select * from cadastros where nome = ?;'
+    
+        conexao.query(sql, nome, (error,result)=>{
+            // const dado = result[0]
+            if(error){
+                response.status(404).json({'erro':error})
+            }else{
+                response.status(200).send(result)
+            }
+        })
+    }
+    
+
+    showSobrenome(request, response) {
+        const sobrenome = request.params.sobrenome
+    
+        const sql = 'select * from cadastros where sobrenome = ?;'
+    
+        conexao.query(sql, sobrenome, (error,result)=>{
+            // const dado = result[0]
+            if(error){
+                response.status(404).json({'erro':error})
+            }else{
+                response.status(200).send(result)
             }
         })
     }
@@ -76,16 +108,16 @@ class CadastroController {
 
 
     
-        const idController = ((request.params.id)-1)
-        const sqlController = 'ALTER TABLE cadastros AUTO_INCREMENT = ?;'
+        // const idController = ((request.params.id)-1)
+        // const sqlController = 'ALTER TABLE cadastros AUTO_INCREMENT = ?;'
     
-        conexao.query(sqlController, idController, (error,result)=>{
-            if(error){
-                response.status(404).send(error)
-            }else{
-                response.status(200)
-            }
-        })
+        // conexao.query(sqlController, idController, (error,result)=>{
+        //     if(error){
+        //         response.status(404).send(error)
+        //     }else{
+        //         response.status(200)
+        //     }
+        // })
     }
 }
 

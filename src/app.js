@@ -12,7 +12,9 @@ app.use(cors())
 app.get('/cadastros', CadastroController.index)
 
 
-app.get('/cadastros/:id', CadastroController.show)
+app.get('/cadastrosId/:id', CadastroController.showId)
+app.get('/cadastrosNome/:nome', CadastroController.showNome)
+app.get('/cadastrosSobrenome/:sobrenome', CadastroController.showSobrenome)
 
 
 app.post('/cadastros', CadastroController.store)
