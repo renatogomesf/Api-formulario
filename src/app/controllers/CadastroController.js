@@ -105,19 +105,6 @@ class CadastroController {
                 response.status(200).send(result)
             }
         })
-
-
-    
-        // const idController = ((request.params.id)-1)
-        // const sqlController = 'ALTER TABLE cadastros AUTO_INCREMENT = ?;'
-    
-        // conexao.query(sqlController, idController, (error,result)=>{
-        //     if(error){
-        //         response.status(404).send(error)
-        //     }else{
-        //         response.status(200)
-        //     }
-        // })
     }
 }
 
