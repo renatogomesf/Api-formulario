@@ -21,7 +21,6 @@ class CadastroController {
         const sql = 'select * from cadastros where id = ?;'
     
         conexao.query(sql, id, (error,result)=>{
-            // const dado = result[0]
             if(error){
                 response.status(404).json({'erro':error})
             }else{
@@ -37,7 +36,6 @@ class CadastroController {
         const sql = 'select * from cadastros where nome = ?;'
     
         conexao.query(sql, nome, (error,result)=>{
-            // const dado = result[0]
             if(error){
                 response.status(404).json({'erro':error})
             }else{
@@ -53,7 +51,6 @@ class CadastroController {
         const sql = 'select * from cadastros where sobrenome = ?;'
     
         conexao.query(sql, sobrenome, (error,result)=>{
-            // const dado = result[0]
             if(error){
                 response.status(404).json({'erro':error})
             }else{
